@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aulas Iguales · Educación con enfoque de género</title>
 <style>
 :root{--bg:#faf8ff;--fg:#1e1b2e;--card:#fff;--mut:#5b5870;--p:#6d28d9;--s:#0d9488;--a:#f59e0b;--line:#e4def5;--hd:rgba(250,248,255,.92);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14111f;--fg:#efeaff;--card:#1f1b30;--mut:#a9a4c4;--p:#a78bfa;--s:#2dd4bf;--a:#fbbf24;--line:#342e50;--hd:rgba(20,17,31,.92)}}
