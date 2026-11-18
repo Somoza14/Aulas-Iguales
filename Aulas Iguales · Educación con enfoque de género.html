@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aulas Iguales · Educación con enfoque de género</title>
+<style>
+:root{--bg:#faf8ff;--fg:#1e1b2e;--card:#fff;--mut:#5b5870;--p:#6d28d9;--s:#0d9488;--a:#f59e0b;--line:#e4def5;--hd:rgba(250,248,255,.92);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14111f;--fg:#efeaff;--card:#1f1b30;--mut:#a9a4c4;--p:#a78bfa;--s:#2dd4bf;--a:#fbbf24;--line:#342e50;--hd:rgba(20,17,31,.92)}}
+:root[data-theme="dark"]{--bg:#14111f;--fg:#efeaff;--card:#1f1b30;--mut:#a9a4c4;--p:#a78bfa;--s:#2dd4bf;--a:#fbbf24;--line:#342e50;--hd:rgba(20,17,31,.92)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hd);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:8px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--p);text-decoration:none}
+.brand svg{width:34px;height:34px}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav a{color:var(--fg);text-decoration:none;padding:6px 10px;border-radius:99px;font-size:14px}
+nav a:hover{background:var(--line)}
+#th{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:6px 10px;cursor:pointer}
+section{max-width:1000px;margin:0 auto;padding:56px 18px 8px}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(26px,4vw,36px)}
+h2 small{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--s);margin-bottom:6px}
+.hero{text-align:center;padding-top:48px}
+.hero svg{width:96px;height:96px}
+.hero h1{font-size:clamp(38px,8vw,64px);color:var(--p);margin:8px 0}
+.lema{font-size:clamp(18px,3vw,24px);font-style:italic;color:var(--s);font-weight:600}
+.hero p{max-width:640px;margin:14px auto;color:var(--mut)}
+.btn{display:inline-block;background:var(--p);color:#fff;border:0;border-radius:99px;padding:10px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--p);border:2px solid var(--p)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.card h3{font-size:18px;color:var(--p)}
+.card p,.card li{color:var(--mut);margin:.3em 0}
+ul{padding-left:20px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:16px 0}
+.flow span{background:var(--p);color:#fff;border-radius:12px;padding:8px 14px;font-weight:600;font-size:14px}
+.flow i{font-style:normal;color:var(--a);font-size:22px}
+.stat{text-align:center}
+.stat b{display:block;font-size:34px;color:var(--a)}
+.note{font-size:13px;color:var(--mut)}
+.case{border-left:5px solid var(--a)}
+.vid{background:linear-gradient(135deg,var(--p),var(--s));color:#fff;border-radius:16px;padding:16px;min-height:170px}
+.vid h3{color:#fff}.vid p{color:#fff;opacity:.95}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:6px 0;font:inherit;cursor:pointer}
+.opt:hover{border-color:var(--p)}
+.opt.ok{background:#16a34a;color:#fff;border-color:#16a34a}
+.opt.no{background:#dc2626;color:#fff;border-color:#dc2626}
+.bar{background:var(--line);border-radius:99px;height:22px;margin:4px 0 10px;overflow:hidden}
+.bar div{background:var(--s);height:100%;color:#fff;font-size:12px;padding-left:8px;line-height:22px;white-space:nowrap;min-width:2px}
+textarea,input[type=text]{width:100%;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit}
+label{display:block;margin:6px 0;cursor:pointer}
+#qr{background:#fff;display:inline-block;padding:12px;border-radius:12px;min-height:60px}
+.post{background:linear-gradient(160deg,var(--p),#be185d);color:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;min-height:190px}
+.post p{color:#fff;font-size:18px;font-weight:700;margin:0 0 10px}
+.post button{align-self:flex-start;background:#fff3;color:#fff;border:1px solid #fff8;border-radius:99px;padding:5px 12px;cursor:pointer}
+footer{text-align:center;color:var(--mut);padding:40px 16px;font-size:14px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="lg" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="var(--p)"/><path d="M9 16c5-2 10-1 15 2 5-3 10-4 15-2v18c-5-2-10-1-15 2-5-3-10-4-15-2z" fill="#fff"/><path d="M24 18v18" stroke="var(--p)" stroke-width="2"/><path d="M14 24h7M27 24h7M14 29h7M27 29h7" stroke="var(--s)" stroke-width="2.5" stroke-linecap="round"/></symbol></svg>
+<header>
+<a class="brand" href="#inicio"><svg><use href="#lg"/></svg>Aulas Iguales</a>
+<nav><a href="#conoce">Conoce el tema</a><a href="#analiza">Analiza la realidad</a><a href="#reflexiona">Reflexiona</a><a href="#transforma">Transforma</a><a href="#acceso">Acceso y difusión</a></nav>
+<button id="th" title="Cambiar tema">🌓</button>
+</header>
+
+<section class="hero" id="inicio">
+<svg><use href="#lg"/></svg>
+<h1>Aulas Iguales</h1>
+<div class="lema">“Educar con igualdad es sembrar libertad.”</div>
+<p><b>Propósito:</b> visibilizar cómo la ausencia de una educación con enfoque de género limita las oportunidades de niñas, niños y adolescentes, y promover acciones concretas para construir escuelas, familias y comunidades más justas e inclusivas.</p>
+<a class="btn" href="#conoce">Comenzar</a> <a class="btn o" href="#acceso">Compartir campaña</a>
+</section>
+
+<section id="conoce">
+<h2><small>1 · Conoce el tema</small>¿Qué es la falta de educación con enfoque de género?</h2>
+<p>Es la ausencia de contenidos, prácticas y políticas educativas que reconozcan y corrijan las desigualdades entre mujeres, hombres y otras identidades. Cuando la escuela no educa con este enfoque, <b>reproduce estereotipos</b>: asigna roles “de niña” y “de niño”, invisibiliza a las mujeres en la historia y la ciencia, y no previene la violencia ni los embarazos en la adolescencia.</p>
+<h3>Conceptos fundamentales</h3>
+<details open><summary>Sexo y género</summary><p>El sexo se refiere a características biológicas; el género a los roles, comportamientos y expectativas que la sociedad asigna según el sexo. El género se aprende, por eso puede transformarse.</p></details>
+<details><summary>Estereotipos de género</summary><p>Ideas simplificadas como “las niñas son delicadas” o “los niños no lloran”, que limitan el desarrollo personal.</p></details>
+<details><summary>Igualdad y equidad</summary><p>Igualdad: mismos derechos y oportunidades. Equidad: dar a cada persona lo que necesita para alcanzar esa igualdad real.</p></details>
+<details><summary>Educación integral de la sexualidad (ESI) y coeducación</summary><p>La ESI aborda cuerpo, afectos, consentimiento y derechos. La coeducación educa a niñas y niños sin jerarquías ni roles impuestos.</p></details>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>Características</h3><ul><li>Currículo y libros con visión masculina</li><li>Docentes sin formación en género</li><li>Falta de ESI en el aula</li><li>Normalización de bromas y acoso</li></ul></div>
+<div class="card"><h3>Manifestaciones</h3><ul><li>Niñas que abandonan la escuela por tareas de cuidado o embarazo</li><li>Carreras “de hombres” y “de mujeres”</li><li>Bullying homofóbico o sexista</li><li>Poca participación femenina en liderazgo y deporte</li></ul></div>
+<div class="card"><h3>Consecuencias</h3><ul><li>Brechas laborales y salariales</li><li>Violencia de género</li><li>Menor autoestima y salud emocional</li><li>Ciclo de pobreza</li></ul></div>
+</div>
+<h3 style="margin-top:24px">Infografía: el ciclo de la desigualdad</h3>
+<div class="flow"><span>Estereotipos</span><i>➜</i><span>Escuela sin enfoque de género</span><i>➜</i><span>Menos oportunidades</span><i>➜</i><span>Violencia y dependencia</span><i>↺</i></div>
+<div class="grid">
+<div class="card stat"><b>≈129 M</b>niñas fuera de la escuela en el mundo</div>
+<div class="card stat"><b>≈2 de 3</b>personas adultas analfabetas son mujeres</div>
+<div class="card stat"><b>≈35 %</b>de graduados en carreras STEM son mujeres</div>
+</div>
+<p class="note">Cifras aproximadas divulgadas por UNESCO; verifica la edición más reciente antes de citarlas.</p>
+</section>
+
+<section id="analiza">
+<h2><small>2 · Analiza la realidad</small>Caso ilustrativo: Camila y Mateo</h2>
+<div class="card case">
+<p>Camila (15) y su hermano Mateo (14) estudian en una escuela rural. Su colegio no imparte educación sexual y los docentes dicen que “estudiar es más importante para los varones”. Camila cuida a sus hermanos menores y falta a clases; al quedar embarazada, es señalada por sus compañeros y decide abandonar los estudios. Mateo continúa y nadie le enseña sobre consentimiento ni paternidad responsable.</p>
+</div>
+<div class="grid" style="margin-top:14px">
+<div class="card"><h3>¿Qué factores influyeron?</h3><p>Roles de cuidado asignados a las niñas, ausencia de ESI, estigma y docentes sin formación.</p></div>
+<div class="card"><h3>¿A quién afecta?</h3><p>A Camila (pierde su educación), a Mateo (no aprende corresponsabilidad) y a toda la comunidad.</p></div>
+<div class="card"><h3>¿Qué se pudo hacer?</h3><p>ESI desde temprano, apoyo para que las madres adolescentes continúen estudiando y capacitación docente.</p></div>
+</div>
+<p class="note">Caso construido a partir de situaciones frecuentes en la región. Para tu exposición puedes reemplazarlo por una noticia o informe documentado y citar la fuente.</p>
+
+<h3 style="margin-top:24px">Recursos audiovisuales</h3>
+<div class="grid">
+<div class="vid"><h3>🎬 Video 1 · “Mismo salón, distintas reglas” (30 s)</h3><p>Dos estudiantes reciben trato diferente por su género. Cierre: “La igualdad se aprende”.</p></div>
+<div class="vid"><h3>🎬 Video 2 · “Sin etiquetas” (20 s)</h3><p>Se quitan etiquetas como “fuerte”, “sensible” y “débil” de un grupo de jóvenes.</p></div>
+<div class="vid"><h3>🎬 Video 3 · “Su historia también cuenta” (30 s)</h3><p>Mujeres científicas y líderes que no aparecen en los libros de texto.</p></div>
+</div>
+<p class="note">Guiones de videos cortos listos para grabar con el celular y subir a la plataforma.</p>
+</section>
+
+<section id="reflexiona">
+<h2><small>3 · Reflexiona</small>Preguntas, encuesta y cuestionario</h2>
+<div class="card">
+<h3>Preguntas de reflexión</h3>
+<details><summary>¿Qué juegos o materias asociabas con “niñas” o “niños” en tu infancia?</summary><textarea rows="2" placeholder="Escribe tu reflexión…"></textarea></details>
+<details><summary>¿Recibiste educación sobre consentimiento y respeto en tu escuela?</summary><textarea rows="2" placeholder="Escribe tu reflexión…"></textarea></details>
+<details><summary>¿Qué cambiarías en tu centro de estudios para que sea más igualitario?</summary><textarea rows="2" placeholder="Escribe tu reflexión…"></textarea></details>
+</div>
+<div class="grid" style="margin-top:14px">
+<div class="card"><h3>📊 Encuesta rápida</h3><p id="pq">¿Recibiste educación con enfoque de género en tu escuela?</p><div id="poll"></div><p class="note">Los resultados se guardan solo en tu dispositivo (demostración).</p></div>
+<div class="card"><h3>🧠 Mito o realidad</h3><div id="quiz"></div></div>
+</div>
+</section>
+
+<section id="transforma">
+<h2><small>4 · Transforma</small>Propuestas de solución</h2>
+<div class="grid">
+<div class="card"><h3>🏫 En la escuela</h3><ul><li>Incluir la ESI y la coeducación en el currículo</li><li>Formar a docentes en género</li><li>Revisar materiales con lenguaje no sexista</li><li>Protocolos contra el acoso</li></ul></div>
+<div class="card"><h3>🏠 En la familia</h3><ul><li>Repartir las tareas del hogar por igual</li><li>Dialogar sobre afectos y consentimiento</li><li>Apoyar los sueños sin etiquetas</li></ul></div>
+<div class="card"><h3>🌍 En la comunidad y en redes</h3><ul><li>Organizar charlas y ferias</li><li>Difundir mensajes de respeto</li><li>Exigir políticas públicas de educación inclusiva</li></ul></div>
+</div>
+<div class="card" style="margin-top:14px"><h3>✊ Crea tu compromiso</h3>
+<label><input type="checkbox" class="ck" value="cuestionaré los estereotipos que escuche"> Cuestionar los estereotipos</label>
+<label><input type="checkbox" class="ck" value="usaré un lenguaje inclusivo y respetuoso"> Usar lenguaje inclusivo</label>
+<label><input type="checkbox" class="ck" value="compartiré las tareas del hogar de forma equitativa"> Compartir las tareas del hogar</label>
+<label><input type="checkbox" class="ck" value="no callaré ante el acoso o la discriminación"> No callar ante el acoso</label>
+<label><input type="checkbox" class="ck" value="difundiré esta campaña con mis amistades"> Difundir la campaña</label>
+<p id="comp" style="font-weight:700;color:var(--p)"></p></div>
+</section>
+
+<section id="acceso">
+<h2><small>5 · Acceso y difusión</small>Comparte la campaña</h2>
+<div class="grid">
+<div class="card" style="text-align:center"><h3>Código QR</h3><div id="qr"></div><p class="note">Escanéalo para abrir la campaña.</p></div>
+<div class="card"><h3>Enlace de acceso</h3><input type="text" id="url" aria-label="Enlace"><p style="margin-top:10px"><button class="btn" id="cp">Copiar enlace</button> <button class="btn o" id="sh">Compartir</button></p><p class="note" id="msg"></p><p><b>#AulasIguales</b> <b>#EducarConIgualdad</b></p></div>
+</div>
+<h3 style="margin-top:20px">Publicaciones para redes sociales</h3>
+<div class="grid">
+<div class="post"><p>“Una escuela sin enfoque de género enseña desigualdad.” #AulasIguales</p><button data-c="Una escuela sin enfoque de género enseña desigualdad. #AulasIguales">Copiar texto</button></div>
+<div class="post"><p>“Los estereotipos limitan; la educación libera.” #EducarConIgualdad</p><button data-c="Los estereotipos limitan; la educación libera. #EducarConIgualdad">Copiar texto</button></div>
+<div class="post"><p>“Todas y todos tenemos derecho a aprender sin miedo.” #AulasIguales</p><button data-c="Todas y todos tenemos derecho a aprender sin miedo. #AulasIguales">Copiar texto</button></div>
+</div>
+</section>
+<footer>Aulas Iguales · Campaña de sensibilización educativa · Proyecto académico</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const root=document.documentElement;
+$('#th').onclick=()=>{const d=getComputedStyle(root).getPropertyValue('--bg').trim()==='#14111f';root.dataset.theme=d?'light':'dark'};
+
+// Copiar
+async function copy(t){try{await navigator.clipboard.writeText(t);return true}catch(e){try{const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();const r=document.execCommand('copy');x.remove();return r}catch(e2){return false}}}
+document.querySelectorAll('.post button').forEach(b=>b.onclick=async()=>{const o=b.textContent;b.textContent=(await copy(b.dataset.c))?'¡Copiado!':'Selecciona y copia';setTimeout(()=>b.textContent=o,1500)});
+
+// Enlace y QR
+const u=$('#url');u.value=location.href.split('#')[0];
+function qr(){const e=$('#qr');e.innerHTML='';if(typeof QRCode==='undefined'){e.textContent='No se pudo cargar el QR';return}try{new QRCode(e,{text:u.value,width:170,height:170})}catch(x){e.textContent='Error al generar el QR'}}
+u.oninput=qr;window.addEventListener('load',qr);
+$('#cp').onclick=async()=>{$('#msg').textContent=(await copy(u.value))?'Enlace copiado ✔':'Copia el enlace manualmente'};
+$('#sh').onclick=async()=>{try{await navigator.share({title:'Aulas Iguales',text:'Conoce la campaña Aulas Iguales',url:u.value})}catch(e){$('#msg').textContent='Tu navegador no permite compartir directamente; usa “Copiar enlace”.'}};
+
+// Encuesta
+const opts=['Sí, siempre','Pocas veces','Nunca'];let votes=[0,0,0];
+try{votes=JSON.parse(localStorage.getItem('ai-poll'))||votes}catch(e){}
+let voted=false;
+function poll(){const t=votes.reduce((a,b)=>a+b,0)||1;$('#poll').innerHTML=voted?opts.map((o,i)=>{const p=Math.round(votes[i]/t*100);return `<div>${o}</div><div class="bar"><div style="width:${p}%">${p}%</div></div>`}).join(''):opts.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('');
+document.querySelectorAll('#poll .opt').forEach(b=>b.onclick=()=>{votes[b.dataset.i]++;voted=true;try{localStorage.setItem('ai-poll',JSON.stringify(votes))}catch(e){}poll()})}
+poll();
+
+// Mito o realidad
+const Q=[["“Los niños no deben llorar ni mostrar emociones.”",false,"Mito: todas las personas sienten y pueden expresar emociones."],["“La educación sexual integral ayuda a prevenir violencia y embarazos adolescentes.”",true,"Realidad: la evidencia muestra que previene riesgos y promueve el respeto."],["“Hay carreras que son solo para hombres.”",false,"Mito: las capacidades no dependen del género."],["“Igualdad y equidad significan exactamente lo mismo.”",false,"Mito: la equidad da a cada persona lo que necesita para llegar a la igualdad."],["“Las tareas del hogar son responsabilidad de todas las personas de la casa.”",true,"Realidad: la corresponsabilidad es clave para la igualdad."]];
+let qi=0,sc=0;
+function quiz(){const q=$('#quiz');if(qi>=Q.length){q.innerHTML=`<p><b>Puntaje: ${sc} de ${Q.length}</b></p><button class="btn" id="rs">Reintentar</button>`;$('#rs').onclick=()=>{qi=0;sc=0;quiz()};return}
+const [t,a,w]=Q[qi];q.innerHTML=`<p>${qi+1}/${Q.length} · ${t}</p><button class="opt" data-v="1">Realidad</button><button class="opt" data-v="0">Mito</button><p id="fb" class="note"></p>`;
+q.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const ok=(b.dataset.v==='1')===a;if(ok)sc++;b.classList.add(ok?'ok':'no');q.querySelectorAll('.opt').forEach(x=>x.onclick=null);$('#fb').innerHTML=(ok?'✅ ¡Correcto! ':'❌ ')+w+' <button class="btn" id="nx" style="padding:4px 14px">Siguiente</button>';$('#nx').onclick=()=>{qi++;quiz()}})}
+quiz();
+
+// Compromiso
+const cks=document.querySelectorAll('.ck');
+cks.forEach(c=>c.onchange=()=>{const s=[...cks].filter(x=>x.checked).map(x=>x.value);$('#comp').textContent=s.length?'Yo me comprometo a: '+s.join('; ')+'.':''});
+</script>
+</body>
+</html>
